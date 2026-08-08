@@ -2,33 +2,37 @@
 /*add in your own font imports here*/
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: "gelica", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
-/*remember to update them in the rest of the CSS : eg the body selector*/
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+h5 {
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1rem;
+}
 
 /*!!!!!*/
 /*change out, and/or add colours to the colour scheme*/
 :root{
     /* basic 2-bit palette from 1bit Monitor Glow Palette by Polyducks */
     /* https://lospec.com/palette-list/1bit-monitor-glow */
-    --colour-1: #222323;
-    --colour-2: #f0f6f0;
+    --colour-1: #3f2e11;
+    --colour-2: #dfd4b8;
 }
 
-/* this swaps the colour order to account for user's OS dark mode */
-/*!!!!!*/
-/*remember to update the colours here too to reflect the above changes*/
-@media (prefers-color-scheme: dark) {
-    :root{
-        --colour-1: #f0f6f0;
-        --colour-2: #222323;
-    }
+header {
+    text-align: center;
 }
-
 
 body {
     background-color: var(--colour-2);
@@ -51,6 +55,7 @@ header {
     flex: 1;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     gap: 1rem;
 }
 
@@ -66,6 +71,10 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#intro-section p {
+    margin-top: 0;
 }
 
 section {
@@ -144,4 +153,37 @@ footer {
 /* compact breakpoint : phone in portrait */
 @media (width < 600px) {
 
+}
+.random {
+   list-style-position: inside;
+   list-style-type: square;
+}
+
+.sound-list {
+   list-style-position: inside;
+   list-style-type: square;
+}
+
+.sound-list li {
+   list-style-position: inside;
+   list-style-type: square;
+}
+
+
+.row{clear:both}
+
+.column{
+    width: 50%;
+    float: left;
+}
+
+
+.image-row {
+    display: flex;
+    gap: 20px;
+}
+
+.image-row img {
+    max-width: 48%;
+    height: auto;
 }

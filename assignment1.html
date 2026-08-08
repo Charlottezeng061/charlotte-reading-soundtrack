@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          <link rel="stylesheet" href="https://use.typekit.net/zlg4hjm.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 <!-- !!!!! -->
@@ -11,12 +12,10 @@
     <title>Assignment 1</title>
 
 <!-- !!!!! -->
-<!--  change this to your preferred icon  -->
-    <!-- favicon was sourced from favicon.io but the original graphics are copyright 2020 Twitter, Inc
-    and other contributors -->
+
     <!-- They are licensed under CC-BY 4.0 as linked below -->
     <!-- https://creativecommons.org/licenses/by/4.0/ -->
-    <link rel="icon" type="image/ico" href="./assets/icons/favicon.ico">
+    <link rel="icon" type="image/ico" href="./assets/icons/book.ico">
 
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
@@ -26,7 +25,7 @@
     <header>
 <!-- !!!!! -->
 <!--    change this to your preferred online name  -->
-        <h1>System Design Document</h1>
+        <h1>Dynamic Reading Soundtrack</h1>
         <link rel="stylesheet" href="https://use.typekit.net/zlg4hjm.css">
           <link rel="stylesheet" href="reset.css">
           <link rel="stylesheet" href="style.css">
@@ -42,157 +41,364 @@
 
             <section id="scenario-section">
 
-                <h3 class="firstSectionHeading">Scenario: Creativity for Senior Centres</h3>
+             <h2 class="firstSectionHeading">1. Design Scenario Analysis</h2>
 
-                <h4>Prompt:</h4>
+                <h3>Scenario: Dynamic Soundtrack-er</h3>
 
-                <p>Design a way for seniors to make music, and feel proud of their work.</p>
+                <p> 
+                    The Dynamic Soundtrack-er scenario requires a browser-based audio instrument which can generate an ongoing soundtrack for a particular activity
+                    or environment. Unlike traditional music players, the soundtrack should be able to respond to changes in the activity over time. 
+                    Users may only interact with the instrument occasionally, but these interactions should still have a meaningful impact on the development of its soundtrack. 
+                </p>
+                <p>
+                    I'm interested in applying this scenario to reading. Reading is a long and continuously changing process, and the story may switch between calm, 
+                    tense, emotional or exciting moments, while traditional background music usually remains unchanged.
+                </p>
+                <p>
+                    Therefore, the purpose is to create a soundtrack that can adapt to the reader's experience without requiring constant attention.
+                    Rather than automatically deciding what sound a book should have, the instrument should allow readers to interpret the story
+                    themselves and occasionally convey changes in emotions or atmosphere.
+                </p>
+                <p>
+                    The main values of this project are immersion, adaptability, coherence and reader agency. The soundtrack should support the reading experience
+                    without distraction. The change of sound should feel gradual and continuous, while allowing the reader to control the interpretation of thestory.
+                </p>
+             </section>
+           
+             <section>
+                <h2>2. Project Overview</h2>
 
-                <h4>Context:</h4>
+                 <h3>Synopsis</h3>
 
                 <p>
-                    Many different forms of creativity have been linked to positive aging outcomes. Creativity in this
-                    context shouldn't be focused on mastery or novelty, but might instead be approached as a craft
-                    and/or social activity.
-                </p>
-
-                <h4>Discussion:</h4>
-
-                <p>
-                    Based on my understanding of the brief, I can identify a few notable details related to how it
-                    sets up this project's purpose and worth. At the core, like most (if not all) instruments, is the goal
-                    of using it to make music. The purpose and process of making music is not singular, so based on the
-                    angle presented in the brief, to approach it as "craft and/or social activity", I might interpret
-                    the importance of making music through performance either with or for others. This differs from other
-                    ways in which a user might understand making music, such as from a personal or compositional approach.
+                   This project proposes a browser-based audio instrument for reading.
+                    Before starting, users need to choose the book’s genre and the initial atmosphere.
+                     While reading, users can occasionally update the current mood of the story, such as calm, mysterious, tense or emotional.
                 </p>
 
                 <p>
-                    Taking performance as an integral aspect of the instruments purpose, I am drawn to thinking about
-                    the underlying social aspects of the act. How can performance serve to connect with others, either
-                    through direct experience of a piece of music, or perhaps drawing in shared memories of prior
-                    experiences with music culture. I can also see the dynamics of crafting communities coming into play
-                    through the potential of instruments to facilitate teaching and learning between two or more people.
+                     These inputs gradually reshape the soundtrack by changing combinations of ambient sound, rhythm, and musical texture.
+                     The instrument does not switch the whole song, but maintains a continuous soundscape that evolves as the reader's interpretation
+                      of the story changes. 
+                </p>
+                   
+                <p>
+                    This project will use Random as its extended technique. Randomness will be used in the preset music rules 
+                    to create variations in sound combinations, rhythm and texture, allowing each reading session to develop differently
+                     and always fit the selected emotional tone.
+                </p>
+
+                <h3>Response to Purpose and Worth</h3>
+
+                <p>
+                   The project responds to the Dynamic Soundtrack-er scenario by allowing the ongoing soundtrack 
+                   to constantly change in the progress of the reading. Readers only need to provide occasional mood or atmosphere inputs,
+                    allowing the soundtrack to adapt without drawing attention away from the book.
                 </p>
 
                 <p>
-                    Building off of this interpretation of purpose, and other aspects of the context's particulars, I can
-                    recognise its potential worth through three particular values: approachability, familiarity and Maturity.
-                    It should be approachable, as something that doesn't feel overwhelmingly complex in its initial appearance.
-                    However, this doesn't mean it should not be complex, but that this complexity is something that may
-                    be optionally revealed over time. In this way it should also be mature, something that doesn't feel
-                    like a toy, overly simple in its appearance or functionality. Finally, tying into the purpose of
-                    connecting with others through shared cultural experiences, is the value of familiarity. The instrument
-                    should draw on familiar cultural framings - either of other instruments, or other aspects of musical
-                    culture.
+                   Immersion will be achieved through continuous ambient and musical layers that respond to the atmosphere
+                    of the story without requiring the reader to search for new music.
                 </p>
 
+                <p>
+                    Adaptability will be created through the interaction between the reader's input and the soundtrack. 
+                    For example, choosing a tense atmosphere may introduce denser rhythms, lower frequencies or more unstable textures,
+                     while a calm atmosphere may reduce rhythm changes and use softer sounds.
+                </p>
+                
+                <p>
+                    Continuity is important because sudden changes could interrupt the reading experience. 
+                    Therefore, sound layers will gradually transition, instead of suddenly stopping one soundtrack and starting another immediately. 
+                </p>
+
+                <p>
+                    Finally, reader agency is the core of this project. This instrument will not automatically analyze or interpret the book.
+                     Instead, readers decide how they understand the current atmosphere of the story. 
+                     It is because readers may have different understandings of the same book, and their preferences for music in the process
+                     of reading may also be different.
+                </p>
             </section>
 
-            <section>
-
-                <h4>Synopsis</h4>
-
-                <p>
-                    I will design an instrument focused on performing accompaniments to a collection of popular songs. This
-                    will include "play along" visual feedback for the song's instrumental parts as well as its lyrics,
-                    with optional levels of auto-accompaniment.
-                </p>
-
-                <h4>Response to Purpose and Worth</h4>
-
-                <p>
-                    This responds to the purpose of allowing for performance to be a social act. By allowing for the visual
-                    feedback to address multiple musical parts (instrumental and vocal) it encourages engagement with
-                    others for that performance. In choosing which particular songs are included in its repertoire,
-                    there's opportunity to engage with the cultural specificity of the instrument's context, such as the
-                    age of the residents, and the location of the centre. I would minimise the particular controls over
-                    the tone of the instrument, instead providing a preset sound matched to the song selection, helping
-                    with the overall approachability. I would also allow for a variance in the amount of auto-accompaniment,
-                    letting users choose the volume of it in relation to their own performance (like karaoke). This would
-                    additionally encourage some aspect of learning - as someone became more familiar with the particular
-                    song they might dial down the accompaniment.
-                </p>
-
-            </section>
 
             <section>
-                <h3>Framing</h3>
+                <h2>
+                    3. Project Framing
+                </h2>
+                <h3>
+                    Concept
+                </h3>
                 <p>
-                    A key conceptual influence on this project is Karaoke - and what if it could be applied to the
-                    vocals and accompaniment. It's important to note that someone who is currently 70 years old would
-                    have been a teenager in the 1970s where the technology of music playback allowed for Karaoke and
-                    "sing alongs" to develop in this particular form. While Karaoke machines (and jukeboxes) have their
-                    own interesting aesthetic lineage, I would perhaps instead draw more specifically on the characterisation
-                    of something like Hammond's 1970 electric organ designs, with wood panelling and colourful toggles.
-                </p>
-                <figure>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Hammond_Aurora_Classic.jpg" alt="Hammond Aurora Electronic Organ">
-                    <figcaption>
-                        <a href="https://commons.wikimedia.org/wiki/File:Hammond_Aurora_Classic.jpg">
-                            Hammond Aurora Classic
-                        </a>
-                         by Goolit. Licensed under the
-                        <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">
-                            Creative Commons Attribution-Share Alike 4.0 International licence.
-                        </a>
-                    </figcaption>
-                </figure>
-                <p>
-                    To be continued...
+                  The project is framed around the idea of reading as a continuous narrative experience rather than a static activity. 
+                  The soundtrack will take inspiration from music used in movies or games, where changes reshape the feeling of the scene.
                 </p>
 
-            </section>
+                <p>
+                    However, unlike movie or game soundtracks where the sequence is preset, the instrument depends on the reader's interpretation. 
+                    Users act as a bridge between books and the audio system by occasionally updating the current feelings of the story.
+                </p>
 
-            <section>
-                <h3>Interaction design analysis</h3>
                 <h4>
-                    Example 1:
-                    <a href="https://virtualpiano.net/?song-post-32683" target="_blank">Virtual Piano</a>
+                    Characterisation
                 </h4>
                 <p>
-                    I chose this example to its discuss information design, in particular the way it handles
-                    searching for a song. There is lots I don't like about other aspects of the info design, but
-                    this is the most relevant for my project. When arriving at the keyboard users can select a
-                    piece of sheet music to play, not too dissimilar to my Karaoke concept. They do so by using
-                    the search box (pictured below).
+                    The interface will be quiet, atmospheric and literary to support the reading atmosphere. 
+                    It should be more like an ambient reading space than a professional music production interface. 
+                    Therefore, dense control buttons, technical synthesizer terms and highly dynamic elements should be avoided. 
+                    The current selected atmosphere can be reflected through subtle movements and visual changes. 
                 </p>
 
+                <p>
+                    The interaction should feel: 
+                </p>
+
+                <p>
+                     Calm - atmospheric - intuitive - immersive
+                </p>
+               
+                <h3>
+                    Sound and Musical Framing
+                </h3>
+                <p>
+                    The soundtrack will be constructed from several types of sound layers:
+                </p>
+
+             <ul class="sound-list">
+                 <li>Ambient environmental sounds</li>
+                  <li>Sustained textures or pads</li>
+                 <li>Simple rhythmic elements</li>
+                 <li>Subtle melodic fragments</li>
+                 <li>Transitional sounds</li>
+            </ul>
+
+                <p>
+                    This project will avoid using lyrical music and complex melodies, 
+                    because these elements may disturb the reader's attention.
+                </p>
+
+                <h3>
+                    Extended Technique: Random
+                </h3>
+                <p>
+                    The project will use JavaScript's Math.random() as its extended technique.
+                </p>
+                <p>
+                    Rather than generating completely unpredictable audio, the system will use controlled randomness. 
+                    Each atmosphere will have a collection of preset sounds and musical behaviours. 
+                    Then, randomness can determine: 
+                </p>
+
+                <ul class="random">
+                  <li>which ambient layer is introduced</li>
+                  <li>what kind of melody to play</li>
+                  <li>variations in rhythm</li>
+                  <li>small changes in texture</li>
+                 </ul>
+               
+
+                <p>
+                    For example, when the reader selects mysterious, the system may randomly choose between several 
+                    low ambient textures and sparse melodic fragments. All available options will still belong to 
+                    the same overall musical character. This allows each reading experience to be slightly different 
+                    without losing its connection to the selected narrative atmosphere.
+                </p>
+
+                <h3>
+                    User Interaction
+                </h3>
+
+                <p>
+                    Before starting a session, the reader will make a small number of initial choices:
+                </p>
+                <p>
+                    Book genre → Initial mood → Start soundtrack
+                </p>
+                <p>
+                    Once start reading, the interface becomes less visually demanding. 
+                    Readers can occasionally update the atmosphere when they feel that the narrative has changed significantly. 
+                </p>
+
+                <p>
+                    Each input gradually modifies the existing soundtrack rather than replacing it. 
+                    Readers can also use basic controls such as volume, pause and possible soundtrack intensity,
+                    but the interface will minimize the need for frequent interaction.
+                </p>
+                <h3>
+                    Included / Excluded
+                </h3>
+<!-- I learned how to create side-by-side lists from:
+https://www.sitepoint.com/community/t/side-by-side-lists/116219 -->               
+    <div class="row">
+        <h4>Included</h4>
+         <ul>
+            <li>Reader-selected book genre</li>
+            <li>Reader-selected atmosphere or mood</li>
+            <li>Continuous generative soundtrack</li>
+            <li>Ambient sounds, rhythm and musical textures</li>
+            <li>Gradual transitions between moods</li>
+            <li>Controlled randomness</li>
+            <li>Basic playback and volume controls</li>
+            <li>Subtle visual feedback</li>
+        </ul>
+      </div>
+      <div class="column">
+        <h4>Excluded</h4>
+        <ul>
+            <li>Automatic analysis of book content</li>
+            <li>Uploading or processing full book text</li>
+            <li>AI interpretation of books</li>
+            <li>Automatic book searching</li>
+            <li>Spotify-style song selection</li>
+            <li>Lyrical music</li>
+            <li>Complex professional synthesizer controls</li>
+        </ul>
+    </div>
+               <p>
+                   Automatic text analysis was considered during early ideation but has been excluded from the current framing.
+                    In addition to increasing technical complexity, automatically interpreting the book could reduce reader agency,
+                    as different readers may understand and experience the same narrative differently.
+               </p>
+            </section>
+
+            </section>
+
+            <section>
+                <h2>4. Interaction design analysis</h2>
+                <h3>
+                    Example 1:
+                    <a href="https://mynoise.net/NoiseMachines/jungleNoiseGenerator.php/" target="_blank">The Ultimate Jungle Noise Generator</a>
+                </h3>
                 <figure>
-                    <img src="./assets/images/virtualPiano_screenGrab1.PNG.jpg" alt="screen shot of the virtual piano UI">
-                    <figcaption>
-                        <a href="https://virtualpiano.net/">Virtual Piano</a>
-                    </figcaption>
+                    <img src="assets/images/JUNGLE LIFE.png" alt="screen shot of the jungle life UI">
                 </figure>
+                <h4>
+                    Sound Layering and User Control
+                </h4>
+                <p>
+                    The Ultimate Jungle Noise Generator is a browser-based soundscape interface that allows users to
+                    combine and adjust different layers of environmental sound. Unlike selecting a complete audio track,
+                    users can shape the overall atmosphere by changing the balance between each sound layer. 
+                </p>
+                <p>
+                    I am especially interested in its layered sound effects and simple controls. Each layer can be adjusted 
+                    independently, so users can freely control the sound effect without professional knowledge of music. 
+                    This makes the interface easier to use than traditional synthesizers. 
+                </p>
+                <p>
+                    The continuity of sound is also closely related to my project. When the user makes changes, the sound 
+                    scene does not need to start playing again, but different sound layers can be gradually enhanced or 
+                    weakened, and the overall experience is still smooth. This is especially important for reading background music, 
+                    because a sudden switch or complete replacement of the track may interrupt the reader's concentration. 
+                </p>
+                <h5>
+                    Impact on my project: 
+                </h5>
+                <p>
+                    This interface has influenced me to decide to build the reading soundtrack into multiple atmosphere, rhythm and texture levels instead of using complete songs. It also made me realize that users should be able to influence the sound effect without directly controlling each audio parameter.
+                </p>
 
+               <h3>
+                    Example 2:
+                    <a href="https://holdspace.surge.sh/" target="_blank"> Holdspace</a>
+                </h3>
+                <figure class="image-row">
+                 <img src="assets/images/holdspace1.png" alt="Screenshot 1 of the Holdspace UI">
+                  <img src="assets/images/holdspace2.png" alt="Screenshot 2 of the Holdspace UI">
+                </figure>
+                
+                <h4>
+                    Minimal Interaction and Feedback
+                </h4>
                 <p>
-                    Clicking on the box doesn't provide any immediate suggesting for the kinds of music sheets I might
-                    be able to search for, rather it just makes the box larger. As I start to type it gives me a few
-                    preselected categories, before it loads in the prediction of the song I'm looking for. Selecting
-                    anything from the categories takes me to a separate page, but selecting the prediction loads the
-                    song straight into the UI. This represents a discord of information design, with different ways of
-                    displaying information based on the kinds of action taken, rather than presenting all the information
-                    within a single frame.
+                    Holdspace creates a sound experience through a very simple interaction. What I'm interested in is that
+                    the interface does not require too many control buttons or continuous input from users. 
+                    The interaction is easy to understand because the sound responds directly to the user's action.
                 </p>
                 <p>
-                    Besides the issues with how the information is presented within the experience of interaction, there
-                    is also the selection of songs that I might choose from, with a seemingly large but also shallow pool
-                    of information. For example there's many different variations on the song "Mad World", but based on
-                    the Imagine Dragons or Gary Jules covers, rather than the original, with no way of knowing which is
-                    which until selecting the sheet.
+                   This is relevant to my reading soundtrack because I do not want users to spend too much time interacting 
+                   with the website while reading. When the atmosphere of the story changes, the interface should only need 
+                   occasional input.
+                </p>
+                <h5>
+                    Impact on my project: 
+                </h5>
+                <p>
+                   This has influenced me to keep the reading interface simple and use emotion selection as the main 
+                   interaction. Users will not need to directly control each layer of sound effect, but their occasional
+                    choices will still create clear changes in the soundtrack.
+                </p>
+
+                <h3>
+                    Example 3:
+                    <a href="https://vibechimes.com/" target="_blank"> Vibe Chimes </a>
+                </h3>
+                <figure>
+                    <img src="assets/images/vibe chime.png" alt="screenshot of the vibe chimes UI">
+                </figure>
+                
+                <h4>
+                    Environmental Input and Visual Feedback
+                </h4>
+                <p>
+                    Vibe Chime is a browser-based interactive sound experience that generates environmental sound effects 
+                    through virtual wind chimes. The control panel allows users to adjust factors such as chime character, 
+                    wind, and time of day, while the interface can also use the user’s current location to reflect local 
+                    environmental conditions.
                 </p>
                 <p>
-                    Picking such an example is perhaps unfair, but it provides a valuable impact on what I want my
-                    project's information design <em>not</em> to be like. Selecting the particular song to play should
-                    be integrated within the singular instrument UI. Preferably this could be done through an initial
-                    presentation of categories, along with a search function if needed, for people to explore rather than
-                    needing to input something ahead of time. It would support this through a more curated choice of
-                    included songs - seeking to represent a smaller set more relevant to its cultural context, and also
-                    making it possible to explore more directly.
+                  What I am particularly concerned about is how the interface connects sound with environmental and visual 
+                  changes. When the user adjusts the settings, the sound will change together with the change of the scene,
+                   such as the lighting and the overall atmosphere. This makes the interactive experience more immersive, 
+                   because sound and visual elements respond together in the environment. 
                 </p>
-                <h4>Example 2</h4>
-                <h4>Example 3</h4>
-                <h4>Example 4</h4>
+                <p>
+                    The location function is also interesting because it allows external information to affect the experience
+                    without requiring the user to adjust every setting.
+                </p>
+                <h5>
+                    Impact on my project: 
+                </h5>
+                <p>
+                   Vibe Chimes has influenced my idea of linking sound changes with visual atmosphere. In my reading soundtrack,
+                    different emotions will not only affect the audio, but also be conveyed through subtle visual elements such as
+                     color, dynamics or lighting, helping readers understand the current state of soundtrack without adding complex controls.
+                </p>
+                
+                <h3>
+                    Example 4:
+                    <a href="https://orbiter.audio/" target="_blank"> Orbiter </a>
+                </h3>
+                <figure>
+                    <img src="assets/images/Orbiter.png" alt="screenshot of the Orbiter UI">
+                </figure>
+                
+                <h4>
+                    Generative Sound and Randomness
+                </h4>
+                <p>
+                   Orbiter is a browser-based generative ambient instrument that continuously creates evolving sound through
+                   the built-in generative sequencer. Users can allow the system to generate music randomly, or adjust sounds, 
+                   modify patches and randomize parameters by themselves. 
+                </p>
+                <p>
+                  I pay special attention to the balance between automated generation and user control. Users do not need to create
+                   each note or rhythm. The system will continue to change after the initial interaction so that the sound can develop
+                    naturally for a long time without continuous attention.
+                </p>
+                <p>
+                    This is very similar to my reading soundtrack: readers should not need to operate the interface continuously
+                    when reading. Once an emotion is selected, the system should be able to continue evolving the soundtrack
+                    independently. But the changes generated must remain within the tone, rather than becoming completely
+                    unpredictable. 
+                </p>
+                <h5>
+                    Impact on my project: 
+                </h5>
+                <p>
+                   Orbiter influenced me to think about how to use controlled randomness. My instrument will not use random
+                   generation of completely unrelated sounds, but will use randomness in preset ambient sounds, rhythms and
+                   textures. In this way, each performance will present a different development and maintain a consistent atmosphere.
+                </p>
             </section>
 
         </main>
@@ -202,6 +408,7 @@
 
     </div>
 
+                
     <footer>
         <p>
 <!-- !!!!! -->
@@ -209,9 +416,6 @@
             Page maintained by:
             <a href="https://github.com/Charlottezeng061" target="_blank">
             Charlotte Zeng
-            </a>
-            <a href="https://au.miro.com/app/board/u3jVOf6U00Q=/?share_link_id=922547582277">
-                Community of Practice Documentation
             </a>
         </p>
     </footer>
