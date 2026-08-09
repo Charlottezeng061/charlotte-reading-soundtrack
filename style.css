@@ -164,20 +164,6 @@ footer {
    list-style-type: square;
 }
 
-.sound-list li {
-   list-style-position: inside;
-   list-style-type: square;
-}
-
-
-.row{clear:both}
-
-.column{
-    width: 50%;
-    float: left;
-}
-
-
 .image-row {
     display: flex;
     gap: 20px;
@@ -186,4 +172,53 @@ footer {
 .image-row img {
     max-width: 48%;
     height: auto;
+}
+
+.included-excluded-table {
+    border-collapse: collapse;
+    border: 2px solid var(--colour-1);
+    width: 100%;
+}
+
+.included-excluded-table thead {
+    background-color: var(--colour-1);
+    color: var(--colour-2);
+}
+
+.included-excluded-table th,
+.included-excluded-table td {
+    border: 1px solid var(--colour-1);
+    padding: 8px 10px;
+}
+
+/* CSS spacing between h5 and p refined with assistance from ChatGPT */
+h5 {
+    margin-bottom: 4px;
+}
+
+.prose h5 + p {
+    margin-block-start: 0;
+}
+
+/*
+Source - https://stackoverflow.com/a/2906586
+Posted by BalusC, modified by community. See post 'Timeline' for change history
+Retrieved 2026-08-10, License - CC BY-SA 4.0
+*/
+
+a.button,.homebutton {
+    padding: 1px 6px;
+    border: 1px outset buttonborder;
+    border-radius: 3px;
+    color: #3f2e11;
+    background-color: #9a7f5a;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+a.button,.homebutton:hover {
+    color: var(--colour-2);
+    background-color: var(--colour-1);
+}
+nav .homebutton {
+    margin-top: 4px;
 }

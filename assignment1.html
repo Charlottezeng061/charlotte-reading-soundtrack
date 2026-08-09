@@ -11,7 +11,6 @@
 <!--    change this to refer to your specific page  -->
     <title>Assignment 1</title>
 
-<!-- !!!!! -->
 
     <!-- They are licensed under CC-BY 4.0 as linked below -->
     <!-- https://creativecommons.org/licenses/by/4.0/ -->
@@ -34,7 +33,7 @@
     <div class="mainNavContainer">
 
         <nav>
-            <a href="./index.html">Home Page</a>
+            <a href="./index.html" class="homebutton">Home Page</a>
         </nav>
 
         <main>
@@ -60,7 +59,7 @@
                     themselves and occasionally convey changes in emotions or atmosphere.
                 </p>
                 <p>
-                    The main values of this project are immersion, adaptability, coherence and reader agency. The soundtrack should support the reading experience
+                    The main values of this project are <strong> immersion, adaptability, coherence and reader agency</strong>. The soundtrack should support the reading experience
                     without distraction. The change of sound should feel gradual and continuous, while allowing the reader to control the interpretation of thestory.
                 </p>
              </section>
@@ -83,7 +82,7 @@
                 </p>
                    
                 <p>
-                    This project will use Random as its extended technique. Randomness will be used in the preset music rules 
+                    This project will use <strong>Random</strong> as its extended technique. Randomness will be used in the preset music rules 
                     to create variations in sound combinations, rhythm and texture, allowing each reading session to develop differently
                      and always fit the selected emotional tone.
                 </p>
@@ -138,9 +137,9 @@
                     Users act as a bridge between books and the audio system by occasionally updating the current feelings of the story.
                 </p>
 
-                <h4>
+                <h3>
                     Characterisation
-                </h4>
+                </h3>
                 <p>
                     The interface will be quiet, atmospheric and literary to support the reading atmosphere. 
                     It should be more like an ambient reading space than a professional music production interface. 
@@ -165,7 +164,7 @@
 
              <ul class="sound-list">
                  <li>Ambient environmental sounds</li>
-                  <li>Sustained textures or pads</li>
+                 <li>Sustained textures or pads</li>
                  <li>Simple rhythmic elements</li>
                  <li>Subtle melodic fragments</li>
                  <li>Transitional sounds</li>
@@ -226,41 +225,60 @@
                 <h3>
                     Included / Excluded
                 </h3>
-<!-- I learned how to create side-by-side lists from:
-https://www.sitepoint.com/community/t/side-by-side-lists/116219 -->               
-    <div class="row">
-        <h4>Included</h4>
-         <ul>
-            <li>Reader-selected book genre</li>
-            <li>Reader-selected atmosphere or mood</li>
-            <li>Continuous generative soundtrack</li>
-            <li>Ambient sounds, rhythm and musical textures</li>
-            <li>Gradual transitions between moods</li>
-            <li>Controlled randomness</li>
-            <li>Basic playback and volume controls</li>
-            <li>Subtle visual feedback</li>
-        </ul>
-      </div>
-      <div class="column">
-        <h4>Excluded</h4>
-        <ul>
-            <li>Automatic analysis of book content</li>
-            <li>Uploading or processing full book text</li>
-            <li>AI interpretation of books</li>
-            <li>Automatic book searching</li>
-            <li>Spotify-style song selection</li>
-            <li>Lyrical music</li>
-            <li>Complex professional synthesizer controls</li>
-        </ul>
-    </div>
-               <p>
-                   Automatic text analysis was considered during early ideation but has been excluded from the current framing.
-                    In addition to increasing technical complexity, automatically interpreting the book could reduce reader agency,
-                    as different readers may understand and experience the same narrative differently.
-               </p>
-            </section>
+<!-- Table structure adapted from MDN:
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/table -->
 
-            </section>
+<table class="included-excluded-table">
+    <thead>
+        <tr>
+            <th scope="col">Included</th>
+            <th scope="col">Excluded</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Reader-selected book genre and atmosphere</td>
+            <td>Automatic analysis of book content</td>
+        </tr>
+
+        <tr>
+            <td>Continuous generative soundtrack</td>
+            <td>AI interpretation of books</td>
+        </tr>
+
+        <tr>
+            <td>Controlled Randomness</td>
+            <td>Book searching</td>
+        </tr>
+
+        <tr>
+            <td>Ambient sounds, rhythm and musical textures</td>
+            <td>Full song selection</td>
+        </tr>
+
+        <tr>
+            <td>Gradual transitions</td>
+            <td>Lyrical music</td>
+        </tr>
+
+        <tr>
+            <td>Basic controls</td>
+            <td>Complex controls</td>
+        </tr>
+
+    </tbody>
+
+</table>
+
+    <p>
+     Automatic text analysis was considered during early ideation but has been excluded from the current framing.
+      In addition to increasing technical complexity, automatically interpreting the book could reduce reader agency,
+      as different readers may understand and experience the same narrative differently.
+    </p>     
+          
+     
+
+            
 
             <section>
                 <h2>4. Interaction design analysis</h2>
@@ -271,9 +289,9 @@ https://www.sitepoint.com/community/t/side-by-side-lists/116219 -->
                 <figure>
                     <img src="assets/images/JUNGLE LIFE.png" alt="screen shot of the jungle life UI">
                 </figure>
-                <h4>
+                <h5>
                     Sound Layering and User Control
-                </h4>
+                </h5>
                 <p>
                     The Ultimate Jungle Noise Generator is a browser-based soundscape interface that allows users to
                     combine and adjust different layers of environmental sound. Unlike selecting a complete audio track,
@@ -306,9 +324,9 @@ https://www.sitepoint.com/community/t/side-by-side-lists/116219 -->
                   <img src="assets/images/holdspace2.png" alt="Screenshot 2 of the Holdspace UI">
                 </figure>
                 
-                <h4>
+                <h5>
                     Minimal Interaction and Feedback
-                </h4>
+                </h5>
                 <p>
                     Holdspace creates a sound experience through a very simple interaction. What I'm interested in is that
                     the interface does not require too many control buttons or continuous input from users. 
@@ -336,9 +354,9 @@ https://www.sitepoint.com/community/t/side-by-side-lists/116219 -->
                     <img src="assets/images/vibe chime.png" alt="screenshot of the vibe chimes UI">
                 </figure>
                 
-                <h4>
+                <h5>
                     Environmental Input and Visual Feedback
-                </h4>
+                </h5>
                 <p>
                     Vibe Chime is a browser-based interactive sound experience that generates environmental sound effects 
                     through virtual wind chimes. The control panel allows users to adjust factors such as chime character, 
@@ -372,9 +390,9 @@ https://www.sitepoint.com/community/t/side-by-side-lists/116219 -->
                     <img src="assets/images/Orbiter.png" alt="screenshot of the Orbiter UI">
                 </figure>
                 
-                <h4>
+                <h5>
                     Generative Sound and Randomness
-                </h4>
+                </h5>
                 <p>
                    Orbiter is a browser-based generative ambient instrument that continuously creates evolving sound through
                    the built-in generative sequencer. Users can allow the system to generate music randomly, or adjust sounds, 
