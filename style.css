@@ -13,6 +13,14 @@ font-weight: 500;
 font-style: normal;
 }
 
+h1,
+h2 {
+    color: #506744;
+}
+
+h3 {
+    color: #6e845f;
+}
 
 body {
     font-family: "proxima-nova", sans-serif;
@@ -214,32 +222,18 @@ Posted by BalusC, modified by community. See post 'Timeline' for change history
 Retrieved 2026-08-10, License - CC BY-SA 4.0
 */
 
-a.button,
-.homebutton {
+a.button {
     padding: 1px 6px;
     border: 1px outset buttonborder;
-    border-radius: 3px;
-    color: #291e0b;
-    background-color: #899773;
+    border-radius: 5px;
+    color: #42351c;
+    background-color: #d1c8b5;
     text-decoration: none;
     margin-bottom: 10px;
 }
-a.button:hover,
-.homebutton:hover {
+a.button:hover {
     color: var(--colour-2);
     background-color: var(--colour-1);
-}
-nav .homebutton {
-    margin-top: 4px;
-}
-
-h1,
-h2 {
-    color: #506744;
-}
-
-h3 {
-    color: #6e845f;
 }
 
 img {
