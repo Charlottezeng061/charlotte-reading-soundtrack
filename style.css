@@ -1,12 +1,19 @@
 /*font imports*/
-h1,
-h2,
-h3,
-h4 {
-  font-family: "gelica", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+
+h1 {
+    font-family: "gelica", sans-serif;
+font-weight: 600;
+font-style: normal;
 }
+
+h2,
+h3 {
+    font-family: "gelica", sans-serif;
+font-weight: 500;
+font-style: normal;
+}
+
+
 body {
     font-family: "proxima-nova", sans-serif;
     font-weight: 300;
@@ -19,7 +26,6 @@ h5 {
     font-style: normal;
     font-size: 1rem;
 }
-
 
 :root{
     /* basic 2-bit palette from 1bit Monitor Glow Palette by Polyducks */
@@ -209,8 +215,8 @@ a.button,
     padding: 1px 6px;
     border: 1px outset buttonborder;
     border-radius: 3px;
-    color: #3f2e11;
-    background-color: #9a7f5a;
+    color: #291e0b;
+    background-color: #899773;
     text-decoration: none;
     margin-bottom: 10px;
 }
@@ -227,7 +233,7 @@ nav .homebutton {
 https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Text_styling/Styling_links */
 
 a:link {
-    color: #7b5548;
+    color: #6e845f;
 }
 
 a:visited {
@@ -240,4 +246,17 @@ a:hover {
 
 a:active {
     color: #9a7f5a;
+}
+
+h1,
+h2 {
+    color: #506744;
+}
+
+h3 {
+    color: #6e845f;
+}
+
+img {
+    border-radius: 15px;
 }
