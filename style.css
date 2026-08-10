@@ -36,6 +36,7 @@ h5 {
 
 header {
     text-align: center;
+    margin-bottom: 0;
 }
 
 body {
@@ -52,7 +53,6 @@ body {
 header {
     display: flex;
     justify-content: center;
-    margin-block-end: 3rem;
 }
 
 .mainNavContainer {
@@ -81,8 +81,12 @@ main {
     margin-top: 0;
 }
 
+/*scroll spacing technique from MDN：
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/scroll-margin-top
+*/
 section {
     max-width: 80rch;
+    scroll-margin-top: 60px;
 }
 
 .firstSectionHeading {
@@ -229,7 +233,7 @@ nav .homebutton {
     margin-top: 4px;
 }
 
-/* Link styling adapted from MDN:
+/* Link styling from MDN:
 https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Text_styling/Styling_links */
 
 a:link {
@@ -259,4 +263,30 @@ h3 {
 
 img {
     border-radius: 15px;
+}
+
+/* Sticky navigation based on MDN and refined with help from ChatGPT:
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
+*/
+.section-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 1rem;
+    position: sticky;
+    top: 0;
+    background-color: var(--colour-2);
+    padding: 12px 0;
+    z-index: 100;
+}
+.section-nav a {
+    color: #3f2e11;
+    text-decoration: none;
+}
+
+.section-nav a:hover {
+    color: #506744;
+    text-decoration: underline;
 }
