@@ -133,10 +133,10 @@ footer {
 /* expanded breakpoint : phone or tablet in landscape, desktop */
 @media (width < 1200px) {
     header {
-        margin-block-end: 2rem;
+        margin-block-end: 0;
     }
     footer {
-        margin-block-start: 2rem;
+        margin-block-start: 1rem;
     }
 }
 /* medium breakpoint : tablet in portrait */
@@ -268,16 +268,17 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
     flex-direction: row;
     justify-content: center;
     gap: 20px;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     position: sticky;
     top: 0;
-    background-color: var(--colour-2);
+    background-color: #dfd4b8;
     padding: 12px 0;
     z-index: 100;
 }
 .section-nav a {
     color: #3f2e11;
     text-decoration: none;
+    font-weight: 600;
 }
 
 .section-nav a:hover {
