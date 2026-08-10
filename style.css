@@ -1,5 +1,4 @@
-/*!!!!!*/
-/*add in your own font imports here*/
+/*font imports*/
 h1,
 h2,
 h3,
@@ -21,8 +20,7 @@ h5 {
     font-size: 1rem;
 }
 
-/*!!!!!*/
-/*change out, and/or add colours to the colour scheme*/
+
 :root{
     /* basic 2-bit palette from 1bit Monitor Glow Palette by Polyducks */
     /* https://lospec.com/palette-list/1bit-monitor-glow */
@@ -206,7 +204,8 @@ Posted by BalusC, modified by community. See post 'Timeline' for change history
 Retrieved 2026-08-10, License - CC BY-SA 4.0
 */
 
-a.button,.homebutton {
+a.button,
+.homebutton {
     padding: 1px 6px;
     border: 1px outset buttonborder;
     border-radius: 3px;
@@ -215,10 +214,30 @@ a.button,.homebutton {
     text-decoration: none;
     margin-bottom: 10px;
 }
-a.button,.homebutton:hover {
+a.button:hover,
+.homebutton:hover {
     color: var(--colour-2);
     background-color: var(--colour-1);
 }
 nav .homebutton {
     margin-top: 4px;
+}
+
+/* Link styling adapted from MDN:
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Text_styling/Styling_links */
+
+a:link {
+    color: #7b5548;
+}
+
+a:visited {
+    color: #6b5a4a;
+}
+
+a:hover {
+    color: #3f2e11;
+}
+
+a:active {
+    color: #9a7f5a;
 }
