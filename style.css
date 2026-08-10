@@ -233,25 +233,6 @@ nav .homebutton {
     margin-top: 4px;
 }
 
-/* Link styling from MDN:
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Text_styling/Styling_links */
-
-a:link {
-    color: #6e845f;
-}
-
-a:visited {
-    color: #6b5a4a;
-}
-
-a:hover {
-    color: #3f2e11;
-}
-
-a:active {
-    color: #9a7f5a;
-}
-
 h1,
 h2 {
     color: #506744;
@@ -263,6 +244,25 @@ h3 {
 
 img {
     border-radius: 15px;
+}
+
+/* Link styling from MDN:
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Text_styling/Styling_links */
+
+a:link {
+    color: #6e845f;
+}
+
+a:visited {
+    color: #6e845f;
+}
+
+a:hover {
+    color: #3f2e11;
+}
+
+a:active {
+    color: #6e845f;
 }
 
 /* Sticky navigation based on MDN and refined with help from ChatGPT:
