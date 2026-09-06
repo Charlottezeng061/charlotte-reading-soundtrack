@@ -132,11 +132,11 @@
         <div class="radio-option">
             <input
                 type="radio"
-                id="emotional"
+                id="nostalgic"
                 name="atmosphere"
-                value="Emotional"
+                value="Nostalgic"
             />
-            <label for="emotional">Emotional</label>
+            <label for="nostalgic">Nostalgic</label>
         </div>
 
     </fieldset>
@@ -184,14 +184,29 @@
         <p> Atmosphere: <strong id="playing-atmosphere">—</strong>
          </p> 
          <p> Intensity: <strong id="playing-intensity">—</strong> 
-        </p>
-         <p id="status"> Make your choices, then start the soundtrack. 
-         </p> 
-
+       
         </section>
     
-
      </main> 
+ 
+
+<!-- audio tracks -->
+<!-- HTML audio element and loop based on MDN -->
+<!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/audio -->
+
+<!-- genre audio -->
+<audio id="fantasy-audio" src="../assets/audio/genre/fantasy.wav" loop></audio>
+<audio id="mystery-audio" src="../assets/audio/genre/mystery.wav" loop></audio>
+<audio id="romance-audio" src="../assets/audio/genre/romance.wav" loop></audio>
+<audio id="sci-fi-audio" src="../assets/audio/genre/sci-fi.wav" loop></audio>
+
+<!-- atmosphere audio -->
+<audio id="calm-audio" src="../assets/audio/atmosphere/calm.wav" loop></audio>
+<audio id="dark-audio" src="../assets/audio/atmosphere/dark.wav" loop></audio>
+<audio id="magical-audio" src="../assets/audio/atmosphere/magical.wav" loop></audio>
+<audio id="nostalgic-audio" src="../assets/audio/atmosphere/nostalgic1.wav" loop></audio>
+
+
      <footer>
         Page maintained by:
             <a href="https://github.com/Charlottezeng061" target="_blank">
