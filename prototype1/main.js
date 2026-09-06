@@ -58,33 +58,107 @@ nostalgicRadio.addEventListener("input", listAtmosphereSelection);
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/play
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/pause
 
-// genre audio
-const fantasyAudio = document.getElementById("fantasy-audio");
-const mysteryAudio = document.getElementById("mystery-audio");
-const romanceAudio = document.getElementById("romance-audio");
-const sciFiAudio = document.getElementById("sci-fi-audio");
+const genreAudio =
+    document.getElementById("genre-audio");
 
-// atmosphere audio
-const calmAudio = document.getElementById("calm-audio");
-const darkAudio = document.getElementById("dark-audio");
-const magicalAudio = document.getElementById("magical-audio");
-const nostalgicAudio = document.getElementById("nostalgic-audio");
+const atmosphereAudio =
+    document.getElementById("atmosphere-audio");
+
+
+
+///////////// Audio Arrays
+
+// each category contains four possible sounds
+// one sound will be randomly selected when the soundtrack starts
+
+let fantasySounds = [
+    "../assets/audio/genre/fantasy1.wav",
+    "../assets/audio/genre/fantasy2.wav",
+    "../assets/audio/genre/fantasy3.wav",
+    "../assets/audio/genre/fantasy4.wav"
+];
+
+let mysterySounds = [
+    "../assets/audio/genre/mystery1.wav",
+    "../assets/audio/genre/mystery2.wav",
+    "../assets/audio/genre/mystery3.wav",
+    "../assets/audio/genre/mystery4.wav"
+];
+
+let romanceSounds = [
+    "../assets/audio/genre/romance1.wav",
+    "../assets/audio/genre/romance2.wav",
+    "../assets/audio/genre/romance3.wav",
+    "../assets/audio/genre/romance4.wav"
+];
+
+let sciFiSounds = [
+    "../assets/audio/genre/sci-fi1.wav",
+    "../assets/audio/genre/sci-fi2.wav",
+    "../assets/audio/genre/sci-fi3.wav",
+    "../assets/audio/genre/sci-fi4.wav"
+];
+
+
+let calmSounds = [
+    "../assets/audio/atmosphere/calm1.wav",
+    "../assets/audio/atmosphere/calm2.wav",
+    "../assets/audio/atmosphere/calm3.wav",
+    "../assets/audio/atmosphere/calm4.wav"
+];
+
+let darkSounds = [
+    "../assets/audio/atmosphere/dark1.wav",
+    "../assets/audio/atmosphere/dark2.wav",
+    "../assets/audio/atmosphere/dark3.wav",
+    "../assets/audio/atmosphere/dark4.wav"
+];
+
+let magicalSounds = [
+    "../assets/audio/atmosphere/magical1.wav",
+    "../assets/audio/atmosphere/magical2.wav",
+    "../assets/audio/atmosphere/magical3.wav",
+    "../assets/audio/atmosphere/magical4.wav"
+];
+
+let nostalgicSounds = [
+    "../assets/audio/atmosphere/nostalgic1.wav",
+    "../assets/audio/atmosphere/nostalgic2.wav",
+    "../assets/audio/atmosphere/nostalgic3.wav",
+    "../assets/audio/atmosphere/nostalgic4.wav"
+];
+
+
+
+///////////// Random Sound
+
+// random method adapted from the class extended techniques demo
+// https://github.com/rmit-idad-2650-wed/extended-techniques-demos
+// Math.random reference:
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+
+function randomSound(soundArray){
+
+    let randomNumber =
+        Math.random();
+
+    let randomSelector =
+        Math.floor(
+            soundArray.length * randomNumber
+        );
+
+    return soundArray[randomSelector];
+
+}
 
 
 
 ///////////// Default Volume
 
-// default slider value is 50%, so audio starts at 0.5 volume
+// default intensity is 50%
 
-fantasyAudio.volume = 0.5;
-mysteryAudio.volume = 0.5;
-romanceAudio.volume = 0.5;
-sciFiAudio.volume = 0.5;
-
-calmAudio.volume = 0.5;
-darkAudio.volume = 0.5;
-magicalAudio.volume = 0.5;
-nostalgicAudio.volume = 0.5;
+genreAudio.volume = 0.5;
+atmosphereAudio.volume = 0.5;
 
 
 
@@ -95,30 +169,40 @@ nostalgicAudio.volume = 0.5;
 // HTMLMediaElement.volume reference:
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/volume
 
-const intensityRange = document.getElementById("intensity");
-const intensityOutputText = document.getElementById("intensity-value");
-const playingIntensity = document.getElementById("playing-intensity");
+const intensityRange =
+    document.getElementById("intensity");
+
+const intensityOutputText =
+    document.getElementById("intensity-value");
+
+const playingIntensity =
+    document.getElementById("playing-intensity");
+
 
 intensityRange.addEventListener("input", (e) => {
 
     // show percentage
-    intensityOutputText.textContent = e.target.value + "%";
-    playingIntensity.textContent = e.target.value + "%";
+
+    intensityOutputText.textContent =
+        e.target.value + "%";
+
+    playingIntensity.textContent =
+        e.target.value + "%";
+
 
     // convert 0-100 into 0-1
-    let volume = e.target.value / 100;
 
-    // change genre audio volume
-    fantasyAudio.volume = volume;
-    mysteryAudio.volume = volume;
-    romanceAudio.volume = volume;
-    sciFiAudio.volume = volume;
+    let volume =
+        e.target.value / 100;
 
-    // change atmosphere audio volume
-    calmAudio.volume = volume;
-    darkAudio.volume = volume;
-    magicalAudio.volume = volume;
-    nostalgicAudio.volume = volume;
+
+    // change both audio layers
+
+    genreAudio.volume =
+        volume;
+
+    atmosphereAudio.volume =
+        volume;
 
 });
 
@@ -126,29 +210,17 @@ intensityRange.addEventListener("input", (e) => {
 
 ///////////// Buttons
 
-const startButton = document.getElementById("start-button");
-const pauseButton = document.getElementById("pause-button");
-const resetButton = document.getElementById("reset-button");
+const startButton =
+    document.getElementById("start-button");
 
-const statusText = document.getElementById("status");
+const pauseButton =
+    document.getElementById("pause-button");
 
+const resetButton =
+    document.getElementById("reset-button");
 
-
-///////////// Pause All Audio
-
-function pauseAllAudio(){
-
-    fantasyAudio.pause();
-    mysteryAudio.pause();
-    romanceAudio.pause();
-    sciFiAudio.pause();
-
-    calmAudio.pause();
-    darkAudio.pause();
-    magicalAudio.pause();
-    nostalgicAudio.pause();
-
-}
+const statusText =
+    document.getElementById("status");
 
 
 
@@ -157,67 +229,140 @@ function pauseAllAudio(){
 function startSoundtrack(){
 
     // pause previous soundtrack
-    pauseAllAudio();
+
+    genreAudio.pause();
+    atmosphereAudio.pause();
 
 
-    // play selected genre
+    // randomly select one sound
+    // from the selected genre
+
 
     if(fantasyRadio.checked === true){
-        fantasyAudio.play();
-        playingGenre.textContent = "Fantasy";
+
+        genreAudio.src =
+            randomSound(fantasySounds);
+
+        playingGenre.textContent =
+            "Fantasy";
+
     }
+
 
     if(mysteryRadio.checked === true){
-        mysteryAudio.play();
-        playingGenre.textContent = "Mystery";
+
+        genreAudio.src =
+            randomSound(mysterySounds);
+
+        playingGenre.textContent =
+            "Mystery";
+
     }
+
 
     if(romanceRadio.checked === true){
-        romanceAudio.play();
-        playingGenre.textContent = "Romance";
+
+        genreAudio.src =
+            randomSound(romanceSounds);
+
+        playingGenre.textContent =
+            "Romance";
+
     }
+
 
     if(sciFiRadio.checked === true){
-        sciFiAudio.play();
-        playingGenre.textContent = "Sci-Fi";
+
+        genreAudio.src =
+            randomSound(sciFiSounds);
+
+        playingGenre.textContent =
+            "Sci-Fi";
+
     }
 
 
-    // play selected atmosphere
+
+    // randomly select one sound
+    // from the selected atmosphere
+
 
     if(calmRadio.checked === true){
-        calmAudio.play();
-        playingAtmosphere.textContent = "Calm";
+
+        atmosphereAudio.src =
+            randomSound(calmSounds);
+
+        playingAtmosphere.textContent =
+            "Calm";
+
     }
+
 
     if(darkRadio.checked === true){
-        darkAudio.play();
-        playingAtmosphere.textContent = "Dark";
+
+        atmosphereAudio.src =
+            randomSound(darkSounds);
+
+        playingAtmosphere.textContent =
+            "Dark";
+
     }
+
 
     if(magicalRadio.checked === true){
-        magicalAudio.play();
-        playingAtmosphere.textContent = "Magical";
+
+        atmosphereAudio.src =
+            randomSound(magicalSounds);
+
+        playingAtmosphere.textContent =
+            "Magical";
+
     }
+
 
     if(nostalgicRadio.checked === true){
-        nostalgicAudio.play();
-        playingAtmosphere.textContent = "Nostalgic";
+
+        atmosphereAudio.src =
+            randomSound(nostalgicSounds);
+
+        playingAtmosphere.textContent =
+            "Nostalgic";
+
     }
 
 
-    // show intensity
+
+    // get current intensity
+
+    let volume =
+        intensityRange.value / 100;
+
+    genreAudio.volume =
+        volume;
+
+    atmosphereAudio.volume =
+        volume;
+
+
+
+    // play both random sounds
+
+    genreAudio.play();
+
+    atmosphereAudio.play();
+
+
+
+    // update Now Playing
+
     playingIntensity.textContent =
         intensityRange.value + "%";
 
-
-    // update status
     statusText.textContent =
         "Soundtrack playing.";
 
-
-    // enable pause button
-    pauseButton.disabled = false;
+    pauseButton.disabled =
+        false;
 
 }
 
@@ -227,7 +372,9 @@ function startSoundtrack(){
 
 function pauseSoundtrack(){
 
-    pauseAllAudio();
+    genreAudio.pause();
+
+    atmosphereAudio.pause();
 
     statusText.textContent =
         "Soundtrack paused.";
@@ -243,23 +390,20 @@ function pauseSoundtrack(){
 
 function resetSoundtrack(){
 
-    // pause all audio
-    pauseAllAudio();
+    // pause audio
+
+    genreAudio.pause();
+    atmosphereAudio.pause();
 
 
     // return audio to beginning
-    fantasyAudio.currentTime = 0;
-    mysteryAudio.currentTime = 0;
-    romanceAudio.currentTime = 0;
-    sciFiAudio.currentTime = 0;
 
-    calmAudio.currentTime = 0;
-    darkAudio.currentTime = 0;
-    magicalAudio.currentTime = 0;
-    nostalgicAudio.currentTime = 0;
+    genreAudio.currentTime = 0;
+    atmosphereAudio.currentTime = 0;
 
 
     // reset genre
+
     fantasyRadio.checked = true;
     mysteryRadio.checked = false;
     romanceRadio.checked = false;
@@ -267,6 +411,7 @@ function resetSoundtrack(){
 
 
     // reset atmosphere
+
     calmRadio.checked = true;
     darkRadio.checked = false;
     magicalRadio.checked = false;
@@ -274,40 +419,52 @@ function resetSoundtrack(){
 
 
     // reset intensity
-    intensityRange.value = 50;
-    intensityOutputText.textContent = "50%";
+
+    intensityRange.value =
+        50;
+
+    intensityOutputText.textContent =
+        "50%";
 
 
-    // reset actual audio volume
-    fantasyAudio.volume = 0.5;
-    mysteryAudio.volume = 0.5;
-    romanceAudio.volume = 0.5;
-    sciFiAudio.volume = 0.5;
+    // reset audio volume
 
-    calmAudio.volume = 0.5;
-    darkAudio.volume = 0.5;
-    magicalAudio.volume = 0.5;
-    nostalgicAudio.volume = 0.5;
+    genreAudio.volume =
+        0.5;
+
+    atmosphereAudio.volume =
+        0.5;
 
 
     // reset selection outputs
-    genreOutput.textContent = "";
-    atmosphereOutput.textContent = "";
+
+    genreOutput.textContent =
+        "";
+
+    atmosphereOutput.textContent =
+        "";
 
 
     // reset Now Playing
-    playingGenre.textContent = "—";
-    playingAtmosphere.textContent = "—";
-    playingIntensity.textContent = "—";
+
+    playingGenre.textContent =
+        "—";
+
+    playingAtmosphere.textContent =
+        "—";
+
+    playingIntensity.textContent =
+        "—";
 
 
     // reset status
+
     statusText.textContent =
         "Make your choices, then start the soundtrack.";
 
 
-    // disable pause button
-    pauseButton.disabled = true;
+    pauseButton.disabled =
+        true;
 
 }
 
@@ -315,8 +472,17 @@ function resetSoundtrack(){
 
 ///////////// Button Event Listeners
 
-startButton.addEventListener("click", startSoundtrack);
+startButton.addEventListener(
+    "click",
+    startSoundtrack
+);
 
-pauseButton.addEventListener("click", pauseSoundtrack);
+pauseButton.addEventListener(
+    "click",
+    pauseSoundtrack
+);
 
-resetButton.addEventListener("click", resetSoundtrack);
+resetButton.addEventListener(
+    "click",
+    resetSoundtrack
+);
