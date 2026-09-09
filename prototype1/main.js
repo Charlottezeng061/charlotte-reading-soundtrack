@@ -1,21 +1,16 @@
 ///////////// Genre Radio
-
 // radio input method adapted from class input-event demo
-// https://github.com/rmit-idad-2650-wed/input-event-demos
 
 const fantasyRadio = document.getElementById("fantasy");
 const mysteryRadio = document.getElementById("mystery");
 const romanceRadio = document.getElementById("romance");
 const sciFiRadio = document.getElementById("sci-fi");
-
 const genreOutput = document.getElementById("genreOutput");
 const playingGenre = document.getElementById("playing-genre");
 
 function listGenreSelection(e){
-
     genreOutput.textContent = e.target.value;
     playingGenre.textContent = e.target.value;
-
 }
 
 fantasyRadio.addEventListener("input", listGenreSelection);
@@ -24,9 +19,7 @@ romanceRadio.addEventListener("input", listGenreSelection);
 sciFiRadio.addEventListener("input", listGenreSelection);
 
 
-
 ///////////// Atmosphere Radio
-
 // radio input method adapted from class input-event demo
 // https://github.com/rmit-idad-2650-wed/input-event-demos
 
@@ -34,15 +27,12 @@ const calmRadio = document.getElementById("calm");
 const darkRadio = document.getElementById("dark");
 const magicalRadio = document.getElementById("magical");
 const nostalgicRadio = document.getElementById("nostalgic");
-
 const atmosphereOutput = document.getElementById("atmosphereOutput");
 const playingAtmosphere = document.getElementById("playing-atmosphere");
 
 function listAtmosphereSelection(e){
-
     atmosphereOutput.textContent = e.target.value;
     playingAtmosphere.textContent = e.target.value;
-
 }
 
 calmRadio.addEventListener("input", listAtmosphereSelection);
@@ -50,10 +40,7 @@ darkRadio.addEventListener("input", listAtmosphereSelection);
 magicalRadio.addEventListener("input", listAtmosphereSelection);
 nostalgicRadio.addEventListener("input", listAtmosphereSelection);
 
-
-
 ///////////// Audio
-
 // HTML audio play and pause methods based on class exercise and MDN
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/play
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/pause
@@ -65,9 +52,7 @@ const atmosphereAudio =
     document.getElementById("atmosphere-audio");
 
 
-
 ///////////// Audio Arrays
-
 // each category contains four possible sounds
 // one sound will be randomly selected when the soundtrack starts
 
@@ -131,7 +116,6 @@ let nostalgicSounds = [
 
 
 ///////////// Random Sound
-
 // random method adapted from the class extended techniques demo
 // https://github.com/rmit-idad-2650-wed/extended-techniques-demos
 // Math.random reference:
@@ -154,12 +138,10 @@ function randomSound(soundArray){
 
 
 ///////////// Default Volume
-
 // default intensity is 50%
 
 genreAudio.volume = 0.5;
 atmosphereAudio.volume = 0.5;
-
 
 
 ///////////// Intensity Range
@@ -359,10 +341,7 @@ function startSoundtrack(){
         intensityRange.value + "%";
 
     statusText.textContent =
-        "Soundtrack playing.";
-
-    pauseButton.disabled =
-        false;
+        "Soundtrack playing."
 
 }
 
@@ -462,9 +441,6 @@ function resetSoundtrack(){
     statusText.textContent =
         "Make your choices, then start the soundtrack.";
 
-
-    pauseButton.disabled =
-        true;
 
 }
 
