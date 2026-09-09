@@ -60,34 +60,17 @@
         <!-- Genre -->
 
         <section class="control-section">
-
             <label class="control-title" for="genre-select">
                 01 Book Genre
             </label>
 
             <select id="genre-select">
-
-                <option value="Fantasy">
-                    Fantasy
-                </option>
-
-                <option value="Mystery">
-                    Mystery
-                </option>
-
-                <option value="Romance">
-                    Romance
-                </option>
-
-                <option value="Sci-Fi">
-                    Sci-Fi
-                </option>
-
+                <option value="Fantasy">Fantasy</option>
+                <option value="Mystery">Mystery</option>
+                <option value="Romance">Romance</option>
+                <option value="Sci-Fi">Sci-Fi</option>
             </select>
-
         </section>
-
-
 
         <!-- Atmosphere -->
 
@@ -96,23 +79,10 @@
             <label class="control-title" for="atmosphere-select">02 Atmosphere</label>
 
             <select id="atmosphere-select">
-
-                <option value="Calm">
-                    Calm
-                </option>
-
-                <option value="Dark">
-                    Dark
-                </option>
-
-                <option value="Magical">
-                    Magical
-                </option>
-
-                <option value="Nostalgic">
-                    Nostalgic
-                </option>
-
+                <option value="Calm">Calm</option>
+                <option value="Dark"> Dark</option>
+                <option value="Magical">Magical</option>
+                <option value="Nostalgic">Nostalgic</option>
             </select>
 
         </section>
@@ -120,28 +90,20 @@
      <!-- Randomize soundtrack-->
 
         <div class="actions">
-
             <button id="random-button">Randomize Soundtrack</button>
-
         </div>
 
 
         <!-- Generated Soundtrack -->
 
         <section class="now-playing">
-
-            <h3>
-                03 Generated Soundtrack
-            </h3>
-
+            <h3>03 Generated Soundtrack</h3>
 
             <!-- Genre Result -->
 
             <div class="sound-result">
-
                 <p>
                     <strong>Genre Sound:</strong>
-
                     <span id="genre-result">
                         —
                     </span>
@@ -151,7 +113,6 @@
                     <input type="checkbox" id="genre-lock">
                     Lock Genre Sound
                 </label>
-
             </div>
 
 
@@ -161,9 +122,7 @@
                 <p>
                     <strong>Atmosphere Sound:</strong>
 
-                    <span id="atmosphere-result">
-                        —
-                    </span>
+                    <span id="atmosphere-result"> — </span>
                 </p>
 
                 <label>
@@ -194,7 +153,6 @@
         </div>
 
 
-
         <!-- Audio -->
         <!--
         The audio element and loop attribute are based on MDN:
@@ -202,7 +160,6 @@
         -->
 
         <audio id="genre-audio"loop></audio>
-
         <audio id="atmosphere-audio"loop></audio>
 
     </main>
@@ -218,7 +175,5 @@
         </p>
     </footer>
 
-
 </body>
-
 </html>
