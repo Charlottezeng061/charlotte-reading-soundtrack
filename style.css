@@ -21,6 +21,15 @@ h3 {
     color: #6e845f;
 }
 
+.area-number {
+    font-family: "proxima-nova", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
 body {
     font-family: "proxima-nova", sans-serif;
     font-weight: 300;
@@ -309,11 +318,6 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
 .prototype {
     padding-top: 30px;
     padding-bottom: 40px;
-    border-top: 1px solid var(--colour-1);
-}
-
-.prototype:last-child {
-    border-bottom: 1px solid var(--colour-1);
 }
 
 .prototype-number {
@@ -332,7 +336,6 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
 
 
 /* prototype links */
-
 .prototype-button {
     display: inline-block;
 
@@ -352,25 +355,14 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
 }
 
 
-/* Assignment 2 only */
+/* Assignment 2 */
 
+/* header */
 .assignment2-page header {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 0;
-}
-
-.assignment2-page .mainNavContainer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.assignment2-page .mainNavContainer aside {
-    display: none;
 }
 
 .assignment2-page header h1 {
@@ -379,7 +371,9 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
     margin-bottom: 15px;
 }
 
-.assignment2-page nav {
+/* navigation */
+.assignment2-page .section-nav{
+    position: static;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -388,18 +382,125 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
     gap: 20px;
 }
 
+/* introduction */
 .assignment2-intro {
-    margin-top: 25px;
-    margin-bottom: 20px;
-}
-
-
-.assignment2-page .section-nav {
-    position: static;
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    max-width: 80rch;
+    margin-top: 40px;
+    margin-bottom: 30px;
 }
 
+.assignment2-intro h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.assignment2-intro p {
+    max-width: 650px;
+}
+
+/* exploration areas */
+.exploration-area {
+    width: 100%;
+    max-width: 80rch;
+    margin-bottom: 50px;
+}
+
+.area-heading {
+    margin-bottom: 25px;
+}
+
+.area-number {
+    display: inline-block;
+    font-family: "gelica", sans-serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #6e845f;
+
+    margin-bottom: 5px;
+}
+
+.area-heading h2 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.area-heading p {
+    max-width: 650px;
+        margin-top: 0;
+}
+
+
+/* prototypes */
+.prototype {
+    padding: 22px 25px;
+    margin-bottom: 18px;
+    background-color: #d8cdb3;
+    border-radius: 12px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* slightly enlarge and change colour on hover */
+.prototype:hover {
+    transform: scale(1.02);
+    background-color: #cfc0a5;
+}
+
+.prototype:last-child {
+    margin-bottom: 0;
+}
+
+.prototype-number {
+    font-family: "proxima-nova", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #6e845f;
+    margin-bottom: 4px;
+}
+
+.prototype h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.prototype p {
+    max-width: 600px;
+    margin-bottom: 10px;
+}
+
+/* prototype links */
+.prototype-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 10px;
+
+    border: 1px solid var(--colour-1);
+    border-radius: 5px;
+
+    color: var(--colour-1);
+    text-decoration: none;
+}
+
+.prototype-button:hover {
+    color: var(--colour-2);
+    background-color: var(--colour-1);
+}
+
+
+/* peer user testing */
+.peer-testing {
+    width: 100%;
+    max-width: 80rch;
+    margin-bottom: 60px;
+}
+
+.peer-testing h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.peer-testing p {
+    max-width: 650px;
+}
