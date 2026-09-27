@@ -413,7 +413,6 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
 .area-number {
     display: inline-block;
     font-family: "gelica", sans-serif;
-    font-style: italic;
     font-size: 0.9rem;
     font-weight: 500;
     color: #6e845f;
