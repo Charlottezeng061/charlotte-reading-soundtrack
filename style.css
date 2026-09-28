@@ -503,3 +503,37 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
 .peer-testing p {
     max-width: 650px;
 }
+
+/* commit log */
+.commit-log {
+    margin-top: 18px;
+}
+
+.commit-log summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: #506744;
+    margin-bottom: 15px;
+}
+
+.commit-log table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.commit-log th,
+.commit-log td {
+    padding: 12px 14px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.5;
+}
+
+.commit-log th {
+    background-color: #cfc0a5;
+}
+
+.commit-log tr {
+    border-bottom: 1px solid #b8aa8c;
+}
