@@ -114,10 +114,20 @@ aside {
     flex: 1;
 }
 
+/* footer styles */
 footer {
     display: flex;
     justify-content: center;
     margin-block-start: 3rem;
+}
+footer a {
+    color: #506744;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #6e845f;
+    text-decoration: underline;
 }
 
 /*technique from Kevin Powell*/
