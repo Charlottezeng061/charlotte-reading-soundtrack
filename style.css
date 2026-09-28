@@ -234,12 +234,6 @@ h5 {
     margin-block-start: 0;
 }
 
-/*
-Source - https://stackoverflow.com/a/2906586
-Posted by BalusC, modified by community. See post 'Timeline' for change history
-Retrieved 2026-08-10, License - CC BY-SA 4.0
-*/
-
 a.button {
     padding: 1px 6px;
     border: 1px outset buttonborder;
@@ -543,4 +537,25 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
 
 .commit-log tr {
     border-bottom: 1px solid #b8aa8c;
+}
+
+
+/* homepage navigation */
+.home-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-header h1 {
+    margin-bottom: 15px;
+}
+
+.home-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
 }
