@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 3 — Dynamic Reading Soundtrack</title>
+
+  <link rel="icon" type="image/x-icon" href="./assets/icons/book.ico">
+  <link rel="stylesheet" href="https://use.typekit.net/zlg4hjm.css">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="assignment3">
+
+  <!-- Main navigation -->
+  <nav class="work-navigation" aria-label="Main navigation">
+    <div class="nav-links">
+      <a href="./index.html">Home</a>
+      <a href="./assignment1.html">Assignment 1</a>
+      <a href="./assignment2.html">Assignment 2</a>
+      <a href="./assignment3.html" aria-current="page">Assignment 3</a>
+      <a href="https://au.miro.com/app/board/u3jVOf6U00Q=/?share_link_id=886025645901">
+        Community of Practice
+      </a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Dynamic Reading Soundtrack</h1>
+  </header>
+
+  <div class="mainNavContainer">
+    <main>
+
+      <section id="overview">
+        <h2>Project overview</h2>
+
+        <p>
+          Dynamic Reading Soundtrack is a browser-based audio
+          instrument that lets readers combine a book genre
+          with an atmosphere. The two sound layers create
+          background audio that readers can adjust to suit
+          their interpretation of a story.
+        </p>
+
+        <p>
+          Instead of searching for a new playlist whenever
+          the mood changes, readers can preview sounds,
+          choose a combination and return to their book.
+          The interface keeps these choices visible so
+          readers can make occasional changes while reading.
+        </p>
+
+        <p>
+          <a
+            class="prototype-button"
+            href="https://charlottezeng061.github.io/dynamicreadingsoundtrack/"
+          >
+            Open the finished instrument
+          </a>
+        </p>
+      </section>
+
+      <section id="scenario">
+        <h2>Design scenario</h2>
+
+        <h3>Dynamic Soundtrack-er</h3>
+
+        <p>
+          The scenario asks for an ongoing soundtrack for
+          an activity or environment, shaped by occasional
+          but meaningful user input. I apply this to reading,
+          where a story can move between different moods
+          while the reader's attention remains on the book.
+        </p>
+
+        <p>
+          Reader agency is central to my response. The
+          instrument does not analyse the book or decide
+          how a scene should feel. Readers choose the
+          genre and atmosphere themselves, allowing
+          different interpretations of the same story.
+        </p>
+
+        <p>
+          For example, a reader can keep Fantasy selected
+          while changing the atmosphere from Calm to Dark
+          as a chapter becomes more tense. Their input
+          changes the soundtrack because their reading
+          of the story has changed.
+        </p>
+      </section>
+
+      <section id="development">
+        <h2>From concept to final instrument</h2>
+
+        <p>
+          My initial concept explored a continuously evolving
+          soundtrack with changes in rhythm, texture and
+          atmosphere. Through prototyping, I narrowed this
+          into a more manageable interaction: combining
+          two recorded audio layers.
+        </p>
+
+        <p>
+          Assignment 2 explored six prototypes across
+          soundtrack control and soundtrack guidance.
+          These helped me consider how much control to
+          give users and how to explain unfamiliar
+          interactions without filling the interface
+          with instructions.
+        </p>
+
+        <p>
+          The final instrument brings together direct
+          selection, short previews and controlled
+          randomness. Each category contains four sounds,
+          providing variation within a simple interface.
+        </p>
+
+        <p>
+          This changes the scope of the original concept.
+          The final version selects and combines existing
+          recordings rather than generating notes or
+          continuously changing musical parameters.
+        </p>
+      </section>
+
+      <section id="interactions">
+        <h2>Core interactions</h2>
+
+        <h3>Choosing and previewing sounds</h3>
+
+        <p>
+          Users select one genre and one atmosphere.
+          The genres are Fantasy, Mystery, Romance and
+          Sci-Fi. The atmospheres are Calm, Dark,
+          Magical and Nostalgic.
+        </p>
+
+        <p>
+          Clicking a sound button selects it and starts
+          a preview of up to six seconds. This lets users
+          hear a layer individually before playing it
+          together with the other selection.
+        </p>
+
+        <p>
+          Double-clicking the same button moves to its
+          next sound. The label “Sound 1 / 4” shows
+          which of the four recordings is selected.
+          Selected buttons keep a filled background so
+          the current combination remains clear after
+          the preview ends.
+        </p>
+
+        <h3>Playing both layers</h3>
+
+        <p>
+          The central Play button starts the selected
+          genre and atmosphere together. It changes to
+          a Pause icon during playback. The volume
+          slider adjusts the overall sound level.
+        </p>
+
+        <p>
+          The current soundtrack display sits above
+          the selections. It shows the chosen combination
+          and changes its status when audio is previewing,
+          playing or paused.
+        </p>
+
+        <h3>Random, Repeat and Reset</h3>
+
+        <p>
+          Random chooses different recordings within
+          the selected genre and atmosphere. It keeps
+          the selected category buttons unchanged.
+          This allows users to try another combination
+          without losing the mood they have chosen.
+        </p>
+
+        <p>
+          Repeat loops the two soundtrack layers.
+          Its button changes appearance when enabled.
+          Each recording loops independently according
+          to its own duration.
+        </p>
+
+        <p>
+          Reset stops playback, restores Fantasy and
+          Calm, returns all categories to their first
+          sound, sets volume to 50% and turns Repeat off.
+        </p>
+      </section>
+
+      <section id="random">
+        <h2>Extended technique: Random</h2>
+
+        <p>
+          I use controlled randomness to introduce
+          variation while keeping the reader's choices
+          meaningful. Random selects recordings within
+          the chosen categories rather than selecting
+          from the entire sound collection.
+        </p>
+
+        <p>
+          For each selected category, the code chooses
+          one of the other three recordings. This avoids
+          immediately choosing the sound that is already
+          selected.
+        </p>
+
+        <p>
+          The following shows the same selection
+          technique used in the instrument:
+        </p>
+
+        <pre><code>function randomClip(currentClip) {
+  // Move forward by one, two or three clips.
+  const offset = Math.floor(Math.random() * 3) + 1;
+
+  // Keep the clip number between 1 and 4.
+  return ((currentClip - 1 + offset) % 4) + 1;
+}</code></pre>
+
+        <p>
+          Math.random() provides a value between 0 and 1.
+          Multiplying by three and rounding down creates
+          three possible offsets. The remainder operator
+          wraps the result back into the four available
+          clip numbers.
+        </p>
+
+        <p>
+          This supports experimentation within a chosen
+          mood. A reader can keep Fantasy and Calm selected
+          while hearing a different pair of recordings.
+        </p>
+      </section>
+
+      <section id="code">
+        <h2>How the code supports the interaction</h2>
+
+        <p>
+          The instrument uses HTML, CSS and vanilla
+          JavaScript. HTML provides the sound buttons,
+          playback controls, volume slider and guide.
+          CSS handles layout, themes and visual states.
+          JavaScript connects these controls to audio
+          playback and updates the interface.
+        </p>
+
+        <p>
+          The selected genre and atmosphere are stored
+          as variables. A separate collection stores
+          the current clip number for each category.
+          Keeping these values separate allows Random
+          to change the recording without changing
+          the selected category.
+        </p>
+
+        <p>
+          Two Audio objects play the soundtrack layers,
+          while a third handles previews. The preview
+          can therefore play one recording independently.
+          The volume slider converts its percentage
+          into a value between 0 and 1 for the audio
+          volume property.
+        </p>
+
+        <p>
+          Click and double-click need separate handling.
+          A short delay allows the code to distinguish
+          a single click from the beginning of a
+          double-click, helping prevent conflicting
+          preview and clip-change actions.
+        </p>
+      </section>
+
+      <section id="design-system">
+        <h2>Design system</h2>
+
+        <h3>Colour and typography</h3>
+
+        <p>
+          The instrument uses warm brown (#3f2e11)
+          and beige (#dfd4b8). Night mode uses a brown
+          background with light text, while day mode
+          reverses this relationship.
+        </p>
+
+        <p>
+          Fraunces gives the main title a literary
+          character. Outfit is used for buttons and
+          supporting information, keeping repeated
+          controls easy to read.
+        </p>
+
+        <h3>Buttons and feedback</h3>
+
+        <p>
+          Rounded sound buttons use consistent spacing,
+          borders and corner radii. A filled background
+          identifies the selected genre and atmosphere,
+          while the small sound counter shows the
+          recording selected within each category.
+        </p>
+
+        <p>
+          Play is the main action and sits in the centre
+          of the player controls. Volume is visually
+          smaller, while Random, Reset and Repeat are
+          grouped as supporting actions.
+        </p>
+
+        <p>
+          Icons reduce the space needed for familiar
+          actions such as playback, volume and theme
+          switching. Accessible labels identify controls
+          that do not have visible text.
+        </p>
+      </section>
+
+      <section id="responsive">
+        <h2>Responsive behaviour</h2>
+
+        <p>
+          On larger screens, the sound categories use
+          four columns. The playback area places volume,
+          Play and the supporting controls across one row.
+        </p>
+
+        <p>
+          On smaller screens, the sound buttons change
+          to two columns and the playback controls
+          rearrange vertically. This keeps the buttons
+          readable without squeezing every control
+          into a narrow row.
+        </p>
+
+        <p>
+          Day and night modes provide an additional
+          visual preference. Changing the theme does
+          not change the selected sounds.
+        </p>
+      </section>
+
+      <section id="feedback">
+        <h2>Testing and refinement</h2>
+
+        <h3>Balancing the player controls</h3>
+
+        <p>
+          Teacher feedback highlighted the balance of
+          the lower interface, particularly the size
+          of the intensity slider. I reduced its visual
+          emphasis and changed it to a volume icon and
+          slider, which better describes what the
+          control actually changes.
+        </p>
+
+        <p>
+          I also moved Play to the centre so the main
+          playback action has a clear position between
+          volume and the supporting controls.
+        </p>
+
+        <h3>Explaining double-click</h3>
+
+        <p>
+          Peer testing showed that the click and
+          double-click instructions were easy to miss.
+          Enlarging the instruction alone did not make
+          the interaction clear enough.
+        </p>
+
+        <p>
+          I introduced a short guide that appears on
+          first use and can be reopened through a
+          question-mark button. The guide presents
+          one step at a time instead of showing a
+          long block of instructions.
+        </p>
+
+        <p>
+          The sound buttons also support the right
+          arrow key to move to the next recording
+          when a button has keyboard focus.
+        </p>
+
+        <h3>Making feedback easier to read</h3>
+
+        <p>
+          Feedback also showed that “1 / 4” was unclear.
+          I changed it to “Sound 1 / 4” to explain
+          what the number represents.
+        </p>
+
+        <p>
+          A peer suggested moving the soundtrack
+          display from the bottom to the top.
+          This brings the current combination closer
+          to the sound selections and makes the
+          interface feel more connected.
+        </p>
+
+        <p>
+          <a href="https://au.miro.com/app/board/u3jVOf6U00Q=/?share_link_id=886025645901">
+            View the development and peer feedback on Miro
+          </a>
+        </p>
+      </section>
+
+      <section id="reflection">
+        <h2>Reflection</h2>
+
+        <p>
+          The main challenge was balancing a quiet
+          reading interface with interactions that
+          users could discover. Removing visible text
+          made the page simpler, but also made the
+          double-click interaction harder to understand.
+          The step-by-step guide provides an explanation
+          without keeping a long instruction on screen.
+        </p>
+
+        <p>
+          The final instrument gives readers a small
+          set of meaningful choices. Controlled
+          randomness adds variation, while persistent
+          selections keep the reader in control of
+          the overall atmosphere.
+        </p>
+
+        <p>
+          A limitation is that double-click is less
+          familiar on touchscreens. A future version
+          could provide a visible next-sound control.
+          Audio transitions could also be refined
+          with fades; these are not included in the
+          current version.
+        </p>
+      </section>
+
+      <section id="commit-log">
+        <h2>Commit log</h2>
+
+        <p>
+          The final project's real commit history
+          will be added here before submission.
+        </p>
+
+        <!-- Add the exported final repository commit table here. -->
+      </section>
+
+     <section id="credits">
+  <h2>Credits</h2>
+
+  <h3>Fonts and icons</h3>
+  <p>
+    The instrument uses Fraunces and Outfit through Google Fonts.
+    This documentation site uses Gelica and Proxima Nova through
+    Adobe Fonts.
+  </p>
+  <p>
+    Icons from <a href="https://icons8.com/">Icons8</a>.
+  </p>
+
+  <h3>Audio sources</h3>
+  <p>
+    The following recordings are sourced from Freesound.
+    The names in brackets identify the corresponding project files.
+    Creator and licence information is available on each source page.
+  </p>
+
+ <details class="audio-credits">
+  <summary>View all audio sources</summary>
+  <h3>Genre</h3>
+
+  <h5>Fantasy</h5>
+  <ol>
+    <li>
+      <a href="https://freesound.org/s/731511/">Enchanted Lobby Loop</a>
+      (fantasy1)
+    </li>
+    <li>
+      <a href="https://freesound.org/s/506266/">Medieval Lute Chords</a>
+      (fantasy2)
+    </li>
+    <li>
+      <a href="https://freesound.org/s/277297/">Fantasy Ambience</a>
+      (fantasy3)
+    </li>
+    <li>
+      <a href="https://freesound.org/s/807750/">Final Phantomsee</a>
+      (fantasy4)
+    </li>
+  </ol>
+
+  <h5>Mystery</h5>
+  <ol>
+    <li>
+      <a href="https://freesound.org/s/728725/">Mysterious ambience</a>
+      (mystery1)
+    </li>
+    <li>
+      <a href="https://freesound.org/s/583732/">Suspense Strings</a>
+      (mystery2)
+    </li>
+    <li>
+      <a href="https://freesound.org/s/384584/">Atmosphere 2</a>
+      (mystery3)
+    </li>
+    <li>
+      <a href="https://freesound.org/s/669503/">Bright And Mystery</a>
+      (mystery4)
+    </li>
+  </ol>
+
+  <h5>Romance</h5>
+  <ol>
+    <li>
+      <a href="https://freesound.org/s/668907/">Free Cinematic Emotional Piano</a>
+      (romance1)
+    </li>
+    <li>
+      <a href="https://freesound.org/s/839571/">Contemplative String Loop</a>
+      (romance2)
+    </li>
+    <li>
+      <a href="https://freesound.org/s/673525/">Lofi Loop 2023</a>
+      (romance3)
+    </li>
+    <li>
+      <a href="https://freesound.org/s/847418/">Murmuring Strings</a>
+      (romance4)
+    </li>
+  </ol>
+
+  <h5>Sci-Fi</h5>
+  <ol>
+    <li>
+      <a href="https://freesound.org/s/817225/">Atmosphere_Scifi_Bunker_Loop_Stereo</a>
+      (sci-fi1)
+    </li>
+    <li>
+      <a href="https://freesound.org/s/703050/">Building Synth [Loop]</a>
+      (sci-fi2)
+    </li>
+    <li>
+      <a href="https://freesound.org/s/534018/">Sci-fi Ambient Drone</a>
+      (sci-fi3)
+    </li>
+    <li>
+      <a href="https://freesound.org/s/726484/">Sci-fi Space Traveling Ambient Suit</a>
+      (sci-fi4)
+    </li>
+  </ol>
+
+  <h3>Atmosphere</h3>
+
+  <h5>Calm</h5>
+  <ol>
+    <li>
+      <a href="https://freesound.org/s/704579/">Rain_Ambience.WAV</a>
+      (calm1)
+    </li>
+    <li>
+      <a href="https://freesound.org/s/479430/">Ambience: Quiet Windy Forest</a>
+      (calm2)
+    </li>
+    <li>
+      <a href="https://freesound.org/s/531015/">Ocean Waves</a>
+      (calm3)
+    </li>
+    <li>
+      <a href="https://freesound.org/s/717579/">Fireplace Fire Crackling</a>
+      (calm4)
+    </li>
+  </ol>
+
+  <h5>Dark</h5>
+  <ol>
+    <li>
+      <a href="https://freesound.org/s/500326/">Dark Drone Ambient</a>
+      (dark1)
+    </li>
+    <li>
+      <a href="https://freesound.org/s/440962/">Dark Wind</a>
+      (dark2)
+    </li>
+    <li>
+      <a href="https://freesound.org/s/728465/">Dark Drone</a>
+      (dark3)
+    </li>
+    <li>
+      <a href="https://freesound.org/s/770379/">Cave Ambience Loop</a>
+      (dark4)
+    </li>
+  </ol>
+
+  <h5>Magical</h5>
+  <ol>
+    <li>
+      <a href="https://freesound.org/s/722399/">Luminis</a>
+      (magical1)
+    </li>
+    <li>
+      <a href="https://freesound.org/s/753334/">Magic - Chimes</a>
+      (magical2)
+    </li>
+    <li>
+      <a href="https://freesound.org/s/826130/">Magic - Cymbal Swell</a>
+      (magical3)
+    </li>
+    <li>
+      <a href="https://freesound.org/s/722381/">Recuperatio</a>
+      (magical4)
+    </li>
+  </ol>
+
+  <h5>Nostalgic</h5>
+  <ol>
+    <li>
+      <a href="https://freesound.org/s/629167/">Lofi E-Piano Loop 95 BPM</a>
+      (nostalgic1)
+    </li>
+    <li>
+      <a href="https://freesound.org/s/827125/">Memories - Nostalgic Simple Piano Melody</a>
+      (nostalgic2)
+    </li>
+    <li>
+      <a href="https://freesound.org/s/416384/">Brahms Lullaby Music Box</a>
+      (nostalgic3)
+    </li>
+    <li>
+      <a href="https://freesound.org/s/464747/">OldClock.wav</a>
+      (nostalgic4)
+    </li>
+  </ol>
+  </details>
+</section>
+
+    </main>
+  </div>
+
+  <footer>
+    <p>
+      Page maintained by:
+      <a href="https://github.com/Charlottezeng061">
+        Charlotte Zeng
+      </a>
+    </p>
+  </footer>
+
+</body>
+</html>

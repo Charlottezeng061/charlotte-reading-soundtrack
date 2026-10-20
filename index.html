@@ -2,53 +2,104 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-          <link rel="stylesheet" href="https://use.typekit.net/zlg4hjm.css">
-          <link rel="stylesheet" href="reset.css">
-          <link rel="stylesheet" href="style.css">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charlotte's Work Index</title>
-
-
     <!-- They are licensed under CC-BY 4.0 as linked below -->
     <!-- https://creativecommons.org/licenses/by/4.0/ -->
-    <link rel="icon" type="image/png" href="./assets/icons/note.ico">
-
+    <link rel="icon" type="image/x-icon" href="assets/icons/book.ico">
+    <link rel="stylesheet" href="https://use.typekit.net/zlg4hjm.css">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-<header class="home-header">
-    <h1>Charlotte's Interface Design and Development Work</h1>
+<body class="homepage">
+<!-- Main navigation -->
+<nav class="work-navigation" aria-label="Main navigation">
+  <div class="nav-links">
+    <a href="./index.html" aria-current="page">Home</a>
+    <a href="./assignment1.html">Assignment 1</a>
+    <a href="./assignment2.html">Assignment 2</a>
+    <a href="./assignment3.html">Assignment 3</a>
+    <a href="https://au.miro.com/app/board/u3jVOf6U00Q=/?share_link_id=886025645901">
+      Community of Practice
+    </a>
+  </div>
+</nav>
 
-    <nav class="home-nav">
-            <a href="./assignment1.html" class="button">Assignment 1</a>
-            <a href="./assignment2.html" class="button">Assignment 2</a>
-            <a href="https://au.miro.com/app/board/u3jVOf6U00Q=/?share_link_id=886025645901" class="button">Community of Practice</a>
-    </nav>
+<header class="documentation-header">
+  <h1>Dynamic Reading Soundtrack</h1>
 </header>
-<main>
-    <section id="intro-section">
-        <p>  
-             A collection of projects developed throughout Interface Design and Development.
-       </p>
+
+<main class="documentation-main">
+    <section aria-labelledby="project-title">
+      <h2 id="project-title" class="visually-hidden">
+        About the project
+      </h2>
+
+      <p>
+        A browser-based audio instrument that lets readers combine
+        a book genre with an atmosphere to create their own
+        reading soundtrack.
+      </p>
+
+      <p class="project-links">
+        <a href="https://charlottezeng061.github.io/dynamicreadingsoundtrack/">
+          Open the finished instrument
+        </a>
+      </p>
     </section>
-</main>
 
-        <!-- this is an empty element which helps with spacing -->
-        <aside></aside>
+    <section>
+      <h2>Design scenario</h2>
+      <p>
+        Dynamic Soundtrack-er explores an ongoing soundtrack for
+        an activity or environment, shaped by occasional but
+        meaningful user input.
+      </p>
+      <p>
+        I apply this scenario to reading. As the story changes,
+        readers can adjust the soundtrack to match their own
+        interpretation of its mood.
+      </p>
+    </section>
 
-    </div>
+    <section>
+      <h2>Response to the scenario</h2>
+      <p>
+        Readers choose a genre and an atmosphere, with four sounds
+        available in each category. They can preview individual
+        sounds, play both layers together, adjust the volume,
+        and repeat a combination while reading.
+      </p>
+      <p>
+        Random changes the sounds within the selected categories.
+        This introduces variation while keeping the reader's
+        chosen genre and atmosphere.
+      </p>
+    </section>
 
+    <section>
+      <h2>Project documentation</h2>
+      <p>
+        <a href="assignment1.html">Assignment 1</a>
+        — Initial concept, scenario analysis and interface research.
+      </p>
+      <p>
+        <a href="assignment2.html">Assignment 2</a>
+        — Six parallel prototypes exploring soundtrack control
+        and guidance.
+      </p>
+      <p>
+        <a href="assignment3.html">Assignment 3</a>
+        — Final concept, interactions, design system, development
+        and commit log.
+      </p>
+    </section>
+  </main>
 
-
-    <footer>
-        <p> 
-            Page maintained by:
+  <footer>
+    <p>
+      Page maintained by:
             <a href="https://github.com/Charlottezeng061" target="_blank">
             Charlotte Zeng
             </a>
