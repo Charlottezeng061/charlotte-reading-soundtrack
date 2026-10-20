@@ -760,13 +760,13 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
   font-size: 48px;
   line-height: 1.2;
 }
-/* Centre the Assignment 1 title and reading area. */
-.assignment1 > header,
-.assignment1 > header h1 {
+
+:is(.assignment1, .assignment3) > header,
+:is(.assignment1, .assignment3) > header h1 {
   text-align: center;
 }
 
-.assignment1 .mainNavContainer > main {
+:is(.assignment1, .assignment3) .mainNavContainer > main {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
