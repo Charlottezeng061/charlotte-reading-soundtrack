@@ -553,7 +553,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
 }
 
 /* Shared page styles */
-:is(.homepage, .assignment1, .assignment2, .assignment3) {
+:is(.homepage, .assignment1, .assignment2) {
   display: block;
   margin: 0;
   padding: 0;
@@ -564,44 +564,44 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
   line-height: 1.6;
 }
 
-:is(.homepage, .assignment1, .assignment2, .assignment3) *,
-:is(.homepage, .assignment1, .assignment2, .assignment3) *::before,
-:is(.homepage, .assignment1, .assignment2, .assignment3) *::after {
+:is(.homepage, .assignment1, .assignment2) *,
+:is(.homepage, .assignment1, .assignment2) *::before,
+:is(.homepage, .assignment1, .assignment2) *::after {
   box-sizing: border-box;
 }
 
-:is(.homepage, .assignment1, .assignment2, .assignment3) h1,
-:is(.homepage, .assignment1, .assignment2, .assignment3) h2,
-:is(.homepage, .assignment1, .assignment2, .assignment3) h3 {
+:is(.homepage, .assignment1, .assignment2) h1,
+:is(.homepage, .assignment1, .assignment2) h2,
+:is(.homepage, .assignment1, .assignment2) h3 {
   font-family: var(--heading-font);
   font-weight: 400;
 }
 
-:is(.homepage, .assignment1, .assignment2, .assignment3) h1,
-:is(.homepage, .assignment1, .assignment2, .assignment3) h2 {
+:is(.homepage, .assignment1, .assignment2) h1,
+:is(.homepage, .assignment1, .assignment2) h2 {
   color: var(--color1);
 }
 
-:is(.homepage, .assignment1, .assignment2, .assignment3) h3 {
+:is(.homepage, .assignment1, .assignment2) h3 {
   color: var(--color5);
 }
 
-:is(.homepage, .assignment1, .assignment2, .assignment3) a:link,
-:is(.homepage, .assignment1, .assignment2, .assignment3) a:visited {
+:is(.homepage, .assignment1, .assignment2) a:link,
+:is(.homepage, .assignment1, .assignment2) a:visited {
   color: var(--color1);
 }
 
-:is(.homepage, .assignment1, .assignment2, .assignment3) a:hover {
+:is(.homepage, .assignment1, .assignment2) a:hover {
   color: var(--color5);
 }
 
-:is(.homepage, .assignment1, .assignment2, .assignment3) a:focus-visible {
+:is(.homepage, .assignment1, .assignment2) a:focus-visible {
   outline: 2px solid var(--color5);
   outline-offset: 5px;
 }
 
 /* Main navigation */
-:is(.homepage, .assignment1, .assignment2, .assignment3) .work-navigation {
+:is(.homepage, .assignment1, .assignment2) .work-navigation {
   position: sticky;
   top: 0;
   z-index: 20;
@@ -620,7 +620,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
   background: var(--color2);
 }
 
-:is(.homepage, .assignment1, .assignment2, .assignment3) .nav-home {
+:is(.homepage, .assignment1, .assignment2) .nav-home {
   flex-shrink: 0;
   font-family: var(--heading-font);
   font-size: 19px;
@@ -628,7 +628,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
   text-decoration: none;
 }
 
-:is(.homepage, .assignment1, .assignment2, .assignment3) .nav-links {
+:is(.homepage, .assignment1, .assignment2) .nav-links {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -636,13 +636,13 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
   gap: 12px 24px;
 }
 
-:is(.homepage, .assignment1, .assignment2, .assignment3) .nav-links a {
+:is(.homepage, .assignment1, .assignment2) .nav-links a {
   font-size: 14px;
   font-weight: 400;
   text-decoration: none;
 }
 
-:is(.homepage, .assignment1, .assignment2, .assignment3)
+:is(.homepage, .assignment1, .assignment2)
 .nav-links a[aria-current="page"] {
   text-decoration: underline;
   text-underline-offset: 7px;
@@ -745,7 +745,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
 }
 
 /* Assignment page titles */
-:is(.assignment1, .assignment2, .assignment3) > header {
+:is(.assignment1, .assignment2) > header {
   display: block;
   width: min(1160px, calc(100% - 56px));
   margin: 0 auto;
@@ -753,7 +753,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
   text-align: left;
 }
 
-:is(.assignment1, .assignment2, .assignment3) > header h1 {
+:is(.assignment1, .assignment2) > header h1 {
   width: auto;
   max-width: none;
   margin: 0;
@@ -761,12 +761,12 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
   line-height: 1.2;
 }
 
-:is(.assignment1, .assignment3) > header,
-:is(.assignment1, .assignment3) > header h1 {
+.assignment1 > header,
+.assignment1 > header h1 {
   text-align: center;
 }
 
-:is(.assignment1, .assignment3) .mainNavContainer > main {
+.assignment1 .mainNavContainer > main {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
@@ -774,23 +774,23 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
 }
 
 /* Assignment 1 reading area */
-:is(.assignment1, .assignment3) .mainNavContainer {
+.assignment1 .mainNavContainer {
   display: block;
   width: min(1160px, calc(100% - 56px));
   margin: 0 auto;
 }
 
-:is(.assignment1, .assignment3) .mainNavContainer > nav,
-:is(.assignment1, .assignment3) .mainNavContainer > aside {
+.assignment1 .mainNavContainer > nav,
+.assignment1 .mainNavContainer > aside {
   display: none;
 }
 
-:is(.assignment1, .assignment3) .mainNavContainer > main {
+.assignment1 .mainNavContainer > main {
   display: block;
   width: 100%;
 }
 
-:is(.assignment1, .assignment3) main section {
+.assignment1 main section {
   max-width: none;
   margin: 0;
   padding: 32px 0;
@@ -798,46 +798,46 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
   scroll-margin-top: 110px;
 }
 
-:is(.assignment1, .assignment3) main h2 {
+.assignment1 main h2 {
   margin: 0 0 20px;
   font-size: 30px;
   line-height: 1.3;
 }
 
-:is(.assignment1, .assignment3) main h3 {
+:is(.homepage, .assignment1) main h3 {
   margin: 28px 0 12px;
   font-size: 23px;
   line-height: 1.4;
 }
 
-:is(.assignment1, .assignment3) main h5 {
+:is(.homepage, .assignment1) main h5 {
   margin: 24px 0 8px;
   font-family: var(--body-font);
   font-size: 17px;
 }
 
-:is(.assignment1, .assignment3) main p {
+.assignment1 main p {
   max-width: 100%;
   margin: 0 0 18px;
   font-size: 17px;
   line-height: 1.8;
 }
 
-:is(.assignment1, .assignment3) main ul {
+:is(.homepage, .assignment1) main ul {
   max-width: 100%;
   margin: 0 0 20px;
   padding-left: 22px;
 }
 
-:is(.assignment1, .assignment3) main li {
+:is(.homepage, .assignment1) main li {
   margin-bottom: 8px;
 }
 
-:is(.assignment1, .assignment3) figure {
+.assignment1 figure {
   margin: 24px 0;
 }
 
-:is(.assignment1, .assignment3) main img {
+.assignment1 main img {
   display: block;
   max-width: 100%;
   height: auto;
@@ -845,20 +845,20 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
 }
 
 /* Assignment 1 table */
-:is(.assignment1, .assignment3) .included-excluded-table {
+.assignment1 .included-excluded-table {
   width: 100%;
   margin: 24px 0;
   border: 1px solid var(--color4);
   border-collapse: collapse;
 }
 
-:is(.assignment1, .assignment3) .included-excluded-table thead {
+.assignment1 .included-excluded-table thead {
   background: var(--color7);
   color: var(--color1);
 }
 
-:is(.assignment1, .assignment3) .included-excluded-table th,
-:is(.assignment1, .assignment3) .included-excluded-table td {
+.assignment1 .included-excluded-table th,
+.assignment1 .included-excluded-table td {
   padding: 14px 16px;
   border: 1px solid var(--color4);
   text-align: left;
@@ -929,7 +929,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
 }
 
 /* Footer */
-:is(.homepage, .assignment1, .assignment2, .assignment3) footer {
+:is(.homepage, .assignment1, .assignment2) footer {
   display: block;
   width: min(1160px, calc(100% - 56px));
   margin: 0 auto;
@@ -953,19 +953,19 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
 
 /* Tablet layout */
 @media (max-width: 1000px) {
-  :is(.homepage, .assignment1, .assignment2, .assignment3) .work-navigation {
+  :is(.homepage, .assignment1, .assignment2) .work-navigation {
     align-items: flex-start;
     padding: 18px 28px;
   }
 
-  :is(.homepage, .assignment1, .assignment2, .assignment3) .nav-links {
+  :is(.homepage, .assignment1, .assignment2) .nav-links {
     gap: 10px 16px;
   }
 }
 
 /* Mobile layout */
 @media (max-width: 650px) {
-  :is(.homepage, .assignment1, .assignment2, .assignment3) .work-navigation {
+  :is(.homepage, .assignment1, .assignment2) .work-navigation {
     position: static;
     flex-direction: column;
     align-items: flex-start;
@@ -973,30 +973,30 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
     gap: 14px;
   }
 
-  :is(.homepage, .assignment1, .assignment2, .assignment3) .nav-links {
+  :is(.homepage, .assignment1, .assignment2) .nav-links {
     justify-content: flex-start;
     gap: 10px 18px;
   }
 
   .homepage .documentation-header,
   .homepage .documentation-main,
-  :is(.assignment1, .assignment3) > header,
-  :is(.assignment1, .assignment3) .mainNavContainer,
+  .assignment1 > header,
+  .assignment1 .mainNavContainer,
 
 
   .assignment2 > header,
   .assignment2 > main,
-  :is(.homepage, .assignment1, .assignment2, .assignment3) footer {
+  :is(.homepage, .assignment1, .assignment2) footer {
     width: calc(100% - 40px);
   }
 
   .homepage .documentation-header,
-  :is(.assignment1, .assignment2, .assignment3) > header {
+  :is(.assignment1, .assignment2) > header {
     padding: 36px 0 28px;
   }
 
   .homepage .documentation-header h1,
-  :is(.assignment1, .assignment2, .assignment3) > header h1 {
+  :is(.assignment1, .assignment2) > header h1 {
     font-size: 36px;
   }
 
@@ -1005,23 +1005,23 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
   }
 
   .homepage .documentation-main h2,
-  :is(.assignment1, .assignment3) main h2 {
+  .assignment1 main h2 {
     font-size: 27px;
   }
 
   .homepage .documentation-main p,
-  :is(.assignment1, .assignment3) main p {
+  .assignment1 main p {
     font-size: 16px;
   }
 
-  :is(.assignment1, .assignment3) .included-excluded-table th,
-  :is(.assignment1, .assignment3) .included-excluded-table td {
+  .assignment1 .included-excluded-table th,
+  .assignment1 .included-excluded-table td {
     padding: 10px;
     overflow-wrap: anywhere;
   }
 }
 
-.assignment3 pre {
+.homepage pre {
   max-width: 100%;
   margin: 24px 0;
   padding: 20px;
@@ -1033,17 +1033,17 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
   line-height: 1.7;
 }
 
-.assignment3 code {
+.homepage code {
   font-family: monospace;
 }
 
 /* Keep navigation links on the right. */
-:is(.homepage, .assignment1, .assignment2, .assignment3) .work-navigation,
-:is(.homepage, .assignment1, .assignment2, .assignment3) .nav-links {
+:is(.homepage, .assignment1, .assignment2) .work-navigation,
+:is(.homepage, .assignment1, .assignment2) .nav-links {
   justify-content: flex-end;
 }
 
-:is(.homepage, .assignment1, .assignment2, .assignment3) footer {
+:is(.homepage, .assignment1, .assignment2) footer {
   display: block;
   width: min(1160px, calc(100% - 56px));
   margin: 0 auto;
@@ -1053,7 +1053,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
   text-align: center;
 }
 
-:is(.homepage, .assignment1, .assignment2, .assignment3) footer p {
+:is(.homepage, .assignment1, .assignment2) footer p {
   max-width: none;
   margin: 0;
 }
