@@ -1057,3 +1057,42 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
   max-width: none;
   margin: 0;
 }
+
+/* Project screenshots */
+.homepage .project-image {
+  margin: 28px 0;
+}
+
+.homepage .project-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.homepage .project-image figcaption {
+  margin-top: 12px;
+  color: var(--color3);
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Compare the two themes. */
+.theme-images {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin: 28px 0;
+}
+
+.homepage .theme-images .project-image {
+  min-width: 0;
+  margin: 0;
+}
+
+@media (max-width: 650px) {
+  .theme-images {
+    grid-template-columns: 1fr;
+  }
+}
