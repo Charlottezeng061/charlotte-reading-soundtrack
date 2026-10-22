@@ -1096,3 +1096,32 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/z-index
     grid-template-columns: 1fr;
   }
 }
+
+/* Commit history table */
+.homepage .commit-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.homepage .commit-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.homepage .commit-table th,
+.homepage .commit-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--color4);
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.homepage .commit-table th {
+  background: var(--color6);
+}
+
+.homepage .commit-table td {
+  min-width: 120px;
+}
